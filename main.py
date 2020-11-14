@@ -31,15 +31,12 @@ def crop_picture(img_name, file_type):
 
 
 def upload_image(img_name):
-    try:
-        load_dotenv()
-        login = os.getenv('INSTAGRAM_LOGIN')
-        password = os.getenv('INSTAGRAM_PASSWORD')
-        bot = Bot()
-        bot.login(username=login, password=password)
-        bot.upload_photo(img_name, caption=img_name)
-    except Exception:
-        print(bot.api.last_response)
+    load_dotenv()
+    login = os.getenv('INSTAGRAM_LOGIN')
+    password = os.getenv('INSTAGRAM_PASSWORD')
+    bot = Bot()
+    bot.login(username=login, password=password)
+    bot.upload_photo(img_name, caption=img_name)
 
 
 def main():
@@ -50,6 +47,7 @@ def main():
             try:
                 upload_image("images/" + entry)
             except Exception:
+                print(f"Картинка {entry} не скачалась")
                 continue
 
 
