@@ -8,13 +8,14 @@ import os
 
 
 def identify_extension(url):
-    file_type = "." + url.split(".")[-1]
+    file_type = os.path.splitext(url)[1]
     return file_type
 
 
 def donwload_img(name, file_url, file_type):
-    file_path = "images/" + str(name)
+    file_path = f"images/{str(name)}"
     response = requests.get(file_url, verify=False)
+    response.raise_for_status()
     Path("images").mkdir(parents=True, exist_ok=True)
     with open(file_path + file_type, 'wb') as file:
         file.write(response.content)
@@ -27,7 +28,7 @@ def crop_picture(img_name, file_type):
 
     rgb_image = image.convert("RGB")
     rgb_image.thumbnail((1080, 1080))
-    rgb_image.save(img_name + ".jpg", format="JPEG")
+    rgb_image.save(f"{img_name}.jpg", format="JPEG")
 
 
 def upload_image(img_name):
@@ -40,12 +41,13 @@ def upload_image(img_name):
 
 
 def main():
-    files_list = os.listdir('images')
+    files = os.listdir('images')
     expansion = "*.jpg"
-    for entry in files_list:
+    for entry in files:
+        print(entry)
         if fnmatch.fnmatch(entry, expansion):
             try:
-                upload_image("images/" + entry)
+                upload_image(f"images/{entry}")
             except Exception:
                 print(f"Картинка {entry} не скачалась")
                 continue
