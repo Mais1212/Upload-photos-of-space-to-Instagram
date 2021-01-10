@@ -17,8 +17,9 @@ def colletion(file_path):
 
 def donwload_hubblesite_img(file_path, file_id):
     response = requests.get(
-        f"http://hubblesite.org/api/v3/image/{str(file_id)}").json()
-    file_url = f"https:{response['image_files'][-1]['file_url']}"
+        f"http://hubblesite.org/api/v3/image/{str(file_id)}")
+    response.raise_for_status()
+    file_url = f"https:{response.json()['image_files'][-1]['file_url']}"
     file_type = utils.identify_extension(file_url)
     utils.donwload_picture(file_path, file_id, file_url, file_type)
 

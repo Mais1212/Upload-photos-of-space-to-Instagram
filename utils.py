@@ -18,7 +18,7 @@ def donwload_picture(file_path, file_name, file_url, file_type):
 
 
 def crop_picture(file_path, file_type):
-    image = Image.open(file_path + file_type)
+    image = Image.open(f"{file_path}{file_type}")
 
     rgb_image = image.convert("RGB")
     rgb_image.thumbnail((1080, 1080))

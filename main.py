@@ -26,7 +26,7 @@ def main():
         print(entry)
         if fnmatch.fnmatch(entry, expansion):
             try:
-                upload_image(directory + entry)
+                upload_image(f"{directory}{entry}")
             except Exception:
                 print(f"Картинка {entry} не скачалась")
                 continue
