@@ -1,21 +1,8 @@
 import os
 import fnmatch
-import argparse
+import utils
 from instabot import Bot
 from dotenv import load_dotenv
-
-
-def create_parser():
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        "-sp",
-        "--start_page",
-        type=str,
-        help="Какой страницой начать?",
-        default=1
-    )
-    return parser
 
 
 def upload_image(img_name):
@@ -28,9 +15,10 @@ def upload_image(img_name):
 
 
 def main():
-    parser = create_parser()
+    parser = utils.create_parser()
     namespace = parser.parse_args()
-    directory = namespace.start_page
+    directory = namespace.path
+    print(directory)
 
     files = os.listdir('images')
     expansion = "*.jpg"
@@ -38,7 +26,7 @@ def main():
         print(entry)
         if fnmatch.fnmatch(entry, expansion):
             try:
-                upload_image(f"images/{entry}")
+                upload_image(directory + entry)
             except Exception:
                 print(f"Картинка {entry} не скачалась")
                 continue
