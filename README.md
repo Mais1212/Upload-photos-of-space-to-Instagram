@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ```
 ### Пример использования
 ```
-python fetch_spacex.py -p images/dsa/or/
+python fetch_spacex.py -p images/dsa/or.png/
 python fetch_hubble.py -p 1\2\3\
 ```
 
