@@ -15,10 +15,16 @@ INSTAGRAM_PASSWORD=<Ваш пароль>
 ```
 pip install -r requirements.txt
 ```
-### Пример использования
+### Примеры использования
+Что-бы скачать картинки из [spacex](https://www.spacex.com), выложить картинки в инстаграм :
 ```
 python fetch_spacex.py -p images/dsa/or.png/
+python main.py -p images/dsa/or.png/
+```
+Что-бы скачать картинки из [hubble](https://hubblesite.org), выложить картинки в инстаграм :
+```
 python fetch_hubble.py -p 1\2\3\
+python main.py -p 1\2\3\
 ```
 
 ### Цель проекта
