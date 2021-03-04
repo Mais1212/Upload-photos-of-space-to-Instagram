@@ -5,17 +5,17 @@ from PIL import Image
 import urllib3
 
 
-def download_picture(file_path, file_name, file_url, file_type):
-    path_name_type = f"{file_path}{file_name}{file_type}"
+def download_picture(folder, file_name, file_url, file_type):
+    file_path = f"{folder}{file_name}{file_type}"
     response = requests.get(file_url, verify=False)
     response.raise_for_status()
-    with open(path_name_type, 'wb') as file:
+    with open(file_path, 'wb') as file:
         file.write(response.content)
 
 
-def crop_picture(file_path):
-    image = Image.open(f"{file_path}")
-    file_name = os.path.splitext(file_path)[0]
+def crop_picture(folder):
+    image = Image.open(f"{folder}")
+    file_name = os.path.splitext(folder)[0]
 
     rgb_image = image.convert("RGB")
     rgb_image.thumbnail((1080, 1080))

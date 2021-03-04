@@ -29,10 +29,10 @@ def main():
 
     extension = "*.jpg"
     for entry in files:
-        file_path = f"{directory}{entry}"
+        folder = f"{directory}{entry}"
         try:
             print(entry)
-            utils.crop_picture(file_path)
+            utils.crop_picture(folder)
             if fnmatch.fnmatch(entry, extension):
                 pass
                 upload_image(f"{directory} {entry}", login, password)
