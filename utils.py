@@ -6,8 +6,6 @@ import urllib3
 
 
 def download_picture(file_path, file_name, file_url, file_type):
-    # path_name = f"{file_path}{file_name}"
-    # print(f"{path_name} | {path_name_type}")
     path_name_type = f"{file_path}{file_name}{file_type}"
     response = requests.get(file_url, verify=False)
     response.raise_for_status()
