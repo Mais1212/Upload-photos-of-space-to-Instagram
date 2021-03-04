@@ -32,7 +32,7 @@ def main():
         folder = f"{directory}{entry}"
         try:
             print(entry)
-            utils.crop_picture(folder)
+            utils.edit_picture(folder)
             if fnmatch.fnmatch(entry, extension):
                 pass
                 upload_image(f"{directory} {entry}", login, password)

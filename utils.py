@@ -13,7 +13,7 @@ def download_picture(folder, file_name, file_url, file_type):
         file.write(response.content)
 
 
-def crop_picture(folder):
+def edit_picture(folder):
     image = Image.open(f"{folder}")
     file_name = os.path.splitext(folder)[0]
 
