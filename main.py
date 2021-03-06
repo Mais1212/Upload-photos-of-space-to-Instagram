@@ -36,7 +36,7 @@ def main():
             utils.edit_picture(folder)
             if fnmatch.fnmatch(entry, extension):
                 pass
-                upload_image(f"{directory} {entry}", login, password)
+                upload_image(f"{folder}", login, password)
         except FileNotFoundError:
             print(f"Возможно вы указали неверный путь к папке, или не указали \
 на конце пути '\\'")
