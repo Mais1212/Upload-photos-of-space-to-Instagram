@@ -26,13 +26,14 @@ def main():
         files = os.listdir(directory)
     except FileNotFoundError:
         print(f"Возможно вы указали неверный путь к папке,\
- или не указали указали на конце пути '\\'")
+ или не поставили '\\' на конце пути")
         exit()
 
     extension = "*.jpg"
     for entry in files:
         folder = f"{directory}{entry}"
         try:
+            raise FileNotFoundError
             print(entry)
             utils.edit_picture(folder)
             if fnmatch.fnmatch(entry, extension):
@@ -40,7 +41,8 @@ def main():
                 upload_image(f"{directory} {entry}", login, password)
         except FileNotFoundError:
             print(f"Возможно вы указали неверный путь к папке, или не указали \
-указали на конце \\")
+на конце пути '\\'")
+            exit()
             continue
 
 
