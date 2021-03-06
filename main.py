@@ -1,5 +1,4 @@
 import os
-import fnmatch
 import utils
 import urllib3
 from instabot import Bot
