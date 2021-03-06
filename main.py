@@ -1,6 +1,7 @@
 import os
 import fnmatch
 import utils
+import urllib3
 from instabot import Bot
 from dotenv import load_dotenv
 
@@ -13,6 +14,7 @@ def upload_image(img_name, login, password):
 
 def main():
     load_dotenv()
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     login = os.getenv('INSTAGRAM_LOGIN')
     password = os.getenv('INSTAGRAM_PASSWORD')
 

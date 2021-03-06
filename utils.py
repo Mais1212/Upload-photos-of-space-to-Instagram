@@ -2,7 +2,6 @@ import requests
 import argparse
 import os
 from PIL import Image
-import urllib3
 
 
 def download_picture(folder, file_name, file_url, file_type):
@@ -23,7 +22,6 @@ def edit_picture(folder):
 
 
 def create_parser():
-    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
