@@ -29,13 +29,11 @@ def main():
  или не поставили '\\' на конце пути")
         exit()
 
-    extension = "*.jpg"
     for entry in files:
-        folder = f"{directory}{entry}"
+        picture_path = f"{directory}{entry}"
         try:
-            utils.edit_picture(folder)
-            if fnmatch.fnmatch(entry, extension):
-                upload_image(f"{folder}", login, password)
+            jpg_piture_path = utils.edit_picture(picture_path)
+            upload_image(f"{jpg_piture_path}", login, password)
         except FileNotFoundError:
             print(f"Возможно вы указали неверный путь к папке, или не указали \
 на конце пути '\\'")

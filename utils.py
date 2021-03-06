@@ -18,7 +18,9 @@ def edit_picture(folder):
 
     rgb_image = image.convert("RGB")
     rgb_image.thumbnail((1080, 1080))
-    rgb_image.save(f"{file_name}.jpg", format="JPEG")
+    path = f"{file_name}.jpg"
+    rgb_image.save(path, format="JPEG")
+    return path
 
 
 def create_parser():
