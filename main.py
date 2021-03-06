@@ -33,8 +33,6 @@ def main():
     for entry in files:
         folder = f"{directory}{entry}"
         try:
-            raise FileNotFoundError
-            print(entry)
             utils.edit_picture(folder)
             if fnmatch.fnmatch(entry, extension):
                 pass
