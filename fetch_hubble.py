@@ -5,7 +5,7 @@ import urllib3
 from pathlib import Path
 
 
-def get_collection(folder):
+def download_collections(folder):
     collections = ["holiday_cards", "wallpaper",
                    "spacecraft", "news", "printshop", "stsci_gallery"]
     for collection in collections:
@@ -35,6 +35,6 @@ if __name__ == "__main__":
         directory = namespace.path
         Path(directory).mkdir(parents=True, exist_ok=True)
 
-        get_collection(directory)
+        download_collection(directory)
     except requests.exceptions.HTTPError as erorr:
         print(f"Произошла ошибка : \n{erorr}")
