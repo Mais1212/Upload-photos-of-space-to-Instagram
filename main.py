@@ -32,7 +32,7 @@ def main():
         picture_path = f"{directory}{entry}"
         try:
             jpg_piture_path = utils.edit_picture(picture_path)
-            upload_image(f"{jpg_piture_path}", login, password)
+            upload_image(jpg_piture_path, login, password)
         except FileNotFoundError:
             print(f"Возможно вы указали неверный путь к папке, или не указали \
 на конце пути '\\'")
