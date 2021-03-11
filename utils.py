@@ -12,9 +12,9 @@ def download_picture(folder, file_name, file_url, file_type):
         file.write(response.content)
 
 
-def edit_picture(folder):
-    image = Image.open(f"{folder}")
-    file_name = os.path.splitext(folder)[0]
+def edit_picture(pic_path):
+    image = Image.open(f"{pic_path}")
+    file_name = os.path.splitext(pic_path)[0]
 
     rgb_image = image.convert("RGB")
     rgb_image.thumbnail((1080, 1080))
