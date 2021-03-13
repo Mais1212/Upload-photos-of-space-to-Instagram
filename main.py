@@ -1,8 +1,9 @@
 import os
-import utils
 import urllib3
-from instabot import Bot
+import utils
+
 from dotenv import load_dotenv
+from instabot import Bot
 
 
 def upload_image(img_name, login, password):

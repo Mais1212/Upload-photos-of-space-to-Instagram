@@ -1,7 +1,8 @@
-import utils
-import requests
 import os
+import requests
 import urllib3
+import utils
+
 from pathlib import Path
 from pathvalidate import sanitize_filename
 

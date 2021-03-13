@@ -1,6 +1,7 @@
-import requests
 import argparse
 import os
+import requests
+
 from PIL import Image
 
 
