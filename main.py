@@ -26,7 +26,7 @@ def main():
         files = os.listdir(directory)
     except FileNotFoundError:
         print(f"Возможно вы указали неверный путь к папке,\
- или не поставили '\\' на конце пути")
+ или не поставили слеш на конце пути")
         exit()
 
     for entry in files:
@@ -36,7 +36,7 @@ def main():
             upload_image(jpg_picture_path, login, password)
         except FileNotFoundError:
             print(f"Возможно вы указали неверный путь к папке, или не указали \
-на конце пути '\\'")
+на конце пути слеш")
             exit()
             continue
 
