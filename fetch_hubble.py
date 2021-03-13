@@ -36,6 +36,6 @@ if __name__ == "__main__":
         directory = namespace.path
         Path(directory).mkdir(parents=True, exist_ok=True)
 
-        download_collection(directory)
+        download_collections(directory)
     except requests.exceptions.HTTPError as erorr:
         print(f"Произошла ошибка : \n{erorr}")
