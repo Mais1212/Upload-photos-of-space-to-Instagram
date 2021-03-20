@@ -16,7 +16,7 @@ def download_picture(folder, file_name, file_url, file_type):
 def edit_picture(pic_path):
     img_height = 1080
     img_width = 1080
-    image = Image.open({pic_path})
+    image = Image.open(pic_path)
     file_name = os.path.splitext(pic_path)[0]
 
     rgb_image = image.convert("RGB")
