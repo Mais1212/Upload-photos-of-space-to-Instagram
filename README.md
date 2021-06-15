@@ -26,7 +26,3 @@ python main.py -p images/dsa/or.png/
 python fetch_hubble.py -p 1\2\3\
 python main.py -p 1\2\3\
 ```
-
-### Цель проекта
-
-Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
